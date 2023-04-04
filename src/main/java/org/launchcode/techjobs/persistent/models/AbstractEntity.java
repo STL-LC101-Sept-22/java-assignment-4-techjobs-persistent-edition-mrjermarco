@@ -1,10 +1,10 @@
 package org.launchcode.techjobs.persistent.models;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
@@ -15,7 +15,7 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    @NotBlank(message = "Name is required")
+    @NotNull(message = "Name is required")
     @Size(min = 3, max = 60, message = "Name must be between 3-60 characters")
     private String name;
 
